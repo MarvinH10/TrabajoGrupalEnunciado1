@@ -1,16 +1,16 @@
 <?php
 namespace Controller;
-use clases\Cliente;
-use config\ConexionDB;
+use Clases\Cliente;
+use Config\ConexionDB;
 include_once "../Config/autoload.php";
 
 class LoginController
 {
     public function logincontrol(string $user,string $pass,string $rol)
     {
-        $cliente = new Cliente();    
-        $datos = $cliente->login($user,$pass,$rol);  
-        $row = $datos->fetchAll();
+        $cliente=new Cliente();
+        $datos=$cliente->login($user,$pass,$rol);
+        $row=$datos->fetchAll();
 
 		foreach($row as $rows)
         {
@@ -21,19 +21,19 @@ class LoginController
         if($row!= null)
         {
             $passbd = null;
-            foreach ($row as $userbd)
+            foreach($row as $userbd)
             {
-                $passbd = $userbd["password"];
-                $rolbd = $userbd["rol"];
+                $passbd=$userbd["password"];
+                $rolbd=$userbd["rol"];
             }
 
-            if ($rolbd == "usuario" ) 
+            if ($rolbd=="usuario" )
             {
                 if($pass==$passbd)
                 {
                     $_SESSION["usuario"] = $user;
-                    $_SESSION["password"] = $pass;               
-                    return "<script>alert('Tienda Brave te da la bienvenida $user ¡¡')</script>;
+                    $_SESSION["password"] = $pass;
+                    return "<script>alert('Tienda NOONE te da la bienvenida $user ¡¡')</script>;
                     <script>window.open('../index.php?ID=$id','_self',null,true)</script>";
                 }
             }
@@ -43,7 +43,7 @@ class LoginController
                 {
                     $_SESSION['admin'] = $user;
                     return "<script>alert('Bienvenido admin¡¡')</script>;
-                    <script>window.open('../vistas/adminview.php','_self',null,true)</script>";
+                    <script>window.open('../Vistas/adminview.php','_self',null,true)</script>";
                 }
             }
         }

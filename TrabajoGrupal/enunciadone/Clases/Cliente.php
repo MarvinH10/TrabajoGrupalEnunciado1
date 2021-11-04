@@ -1,8 +1,8 @@
 <?php
 namespace Clases;
-use config\ConexionDB;
-include_once "../config/autoload.php";
-include_once "../config/ConexionDB.php";
+use Config\ConexionDB;
+include_once "../Config/autoload.php";
+include_once "../Config/ConexionDB.php";
 
 class Cliente
 {

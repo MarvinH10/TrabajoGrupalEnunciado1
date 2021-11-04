@@ -1,8 +1,8 @@
 <?php session_start(); 
-    use Controller\ProductoController;
+    use Controller\PedidoController;
     include_once "../Config/autoloadadmin.php";
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,22 +19,17 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 
-
-
-	<?php
-    $usuario = null;
-    if(!empty($_SESSION["usuario"])){
-        $usuario = $_SESSION["usuario"];
-    }
-    // if(empty($_SESSION['Admin'])){echo '<script>window.open("../index.php","_self",null,true);</script>';}
+    <?php
+		if(empty($_SESSION['admin']))
+        {
+            echo '<script>window.open("adminview.php","_self",null,true);</script>';
+        }
     ?>
 </head>
 
 <body>
-
-    <div class="brand">ADMINISTRACION PRODUCTOS NOONE</div>
-    <div class="address-bar"><strong>Productos de primera marca</strong> justo en tus manos</div>
-
+    <div class="brand">ORDENES NOONE</div>
+    <div class="address-bar"><strong>Productos a primera marca</strong> justo en tus manos</div>
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -50,9 +45,8 @@
 					<li><a href="adminview.php">Ordenes</a></li>
 					<li><a href="registroproducto.php?ProductAction=Add">Agregar Productos</a></li>
 					<li><a href="adminproductos.php">Lista de Productos</a></li>
-                    <li><a href="admincliente.php">Clientes</a></li>
-                    <?php if($_SESSION['admin'] != null){echo '<li><a href="Logout.php">Salir</a>';}?>
-
+                    <li><a href="admincliente.php">Mis Clientes</a></li>
+					<?php if($_SESSION['admin'] != null){echo '<li><a href="Logout.php">Salir</a>';}?>
                 </ul>
             </div>
         </div>
@@ -63,35 +57,36 @@
             <div class="box">
                 <div class="col-lg-12">
 						<hr>
-						<h2 class="intro-text text-center">Productos disponibles</h2>
+						<h2 class="intro-text text-center">Pedidos</h2>
 						<hr>
 						<div class="table-responsive">
 							    <table border="5px" class="table">
 								<tr style="text-align: center; color: Black; font-weight: bold;">
-                                <td>Img</td>
-                                <td>ID de Producto</td>
-                                <td>Tipo</td>
-                                <td>Descripción</td>
-                                <td>Precio</td>
+                                <td>ID de Pedido</td>
+                                <td>ID de Cliente</td>
+                                <td>Tipo producto</td>
+                                <td>Nombre de Producto</td>
+                                <td>Precio de Producto</td>
+                                <td>Fecha de Pedido</td>
                                 <td>Acción</td>
 								</tr>
 
 								<?php 
-                                $producto = new ProductoController();
-                                $resultado = $producto->mostrarTodo();
+                                $pedido=new PedidoController();
+                                $resultado=$pedido->mostrar();
                                 
-                                foreach ($resultado as $Rows)
+                                foreach($resultado as $Rows)
                                 {
                                 ?>
 								<tr style="color: black">
-                                <td><img style="width: 100px; height: 100px;" src="../img/<?php echo $Rows[4];?>"></td>
 								<td><?php echo $Rows[0]; ?></td>
 								<td><?php echo $Rows[1]; ?></td>
 								<td><?php echo $Rows[2]; ?></td>
 								<td><?php echo $Rows[3]; ?></td>
+								<td><?php echo $Rows[4]; ?></td>
+								<td><?php echo $Rows[5]; ?></td>
 								<td>
-								<a href="#" style="margin-bottom: 5px;" class="btn btn-primary" onclick="accionProducto('Edit',<?php echo $Rows[0]; ?>);">Editar</a>
-								<a href="#" style="margin-bottom: 5px;" class="btn btn-danger" onclick="accionProducto('Eliminar', <?php echo $Rows[0]; ?>);">Eliminar</a>
+								<a href="#" style="margin-bottom: 5px;" class="btn btn-danger" onclick="CancelarPedido(<?php echo $Rows[0]; ?>);">Eliminar</a>
 								</td>
                                 <?php }?>
                             </tr>
@@ -115,22 +110,13 @@
     <script src="../public/js/jquery.js"></script>
     <script src="../public/js/bootstrap.min.js"></script>
 	<script>
-		function accionProducto(Accion,ID)
+		function CancelarPedido(ID)
 		{
-			if(Accion==="Edit")
+			if(confirm("¿Estas seguro de eliminar el pedido?")===true)
 			{
-				if(confirm("¿Seguro deseas editar este producto?")===true)
-				{
-					window.open("registroproducto.php?ProdID="+ID+"&ProductAction="+Accion,"_self",null,true);
-				}
+				window.open("pedidodelete.php?id="+ID,"",null,true);
 			}
-			else if(Accion==="Eliminar")
-			{
-				if(confirm("¿Seguro deseas eliminar este producto?")===true)
-				{
-                    window.open("productodelete.php?ProdID="+ID+"&ProductAction="+Accion,"_self",null,true);				}
-			    }
-		    }
+		}
 	</script>
 </body>
 </html>

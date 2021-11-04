@@ -1,15 +1,14 @@
 <?php
 namespace Controller;
-use clases\ProductoIndex;
+use Clases\ProductoIndex;
+include_once "../Config/autoload.php";
 
-include_once "Config/autoload.php";
 
-
-class indexController
+class IndexController
 {
     public function mostrar()
     {
-        $producto =  new ProductoIndex();
+        $producto=new ProductoIndex();
         return $producto->mostrar();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 namespace Controller;
-use clases\Producto;
+use Clases\Producto;
 include_once "../Config/autoload.php";
 
 
@@ -42,7 +42,6 @@ class ProductoController
         $cproducto->setPrecio($precio);
         $cproducto->actualizar($id);
     }
-    
 
     public function eliminar(int $id)
     {
