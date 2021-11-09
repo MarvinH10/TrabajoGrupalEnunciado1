@@ -19,7 +19,7 @@ class Cliente
 
     public function setUser(string $usuario)
     {
-        $this->usuario = $usuario;
+        $this->usuario=$usuario;
     }  
     public function getUser()
     {
@@ -28,7 +28,7 @@ class Cliente
 
     public function setPass(string $pass)
     {
-        $this->pass = $pass;
+        $this->pass=$pass;
     }  
 
     public function getPass()
@@ -37,7 +37,7 @@ class Cliente
     }  
     public function setRol(string $rol)
     {
-        $this->rol = $rol;
+        $this->rol=$rol;
     }  
 
     public function getRol()
@@ -47,7 +47,7 @@ class Cliente
     
     public function setId(int $id)
     {
-        $this->id = $id;
+        $this->id=$id;
     }  
 
     public function getId()
@@ -57,7 +57,7 @@ class Cliente
 
     public function setNombre(string $nombres)
     {
-        $this->nombres = $nombres;
+        $this->nombres=$nombres;
     }  
     
     public function getNombre()
@@ -67,7 +67,7 @@ class Cliente
 
     public function setApellido(string $apellidos)
     {
-        $this->apellidos = $apellidos;
+        $this->apellidos=$apellidos;
     }  
     
     public function getApellido()
@@ -76,7 +76,7 @@ class Cliente
     }  
     public function setDni(int $dni)
     {
-        $this->dni = $dni;
+        $this->dni=$dni;
     }  
     
     public function getDni()
@@ -94,7 +94,7 @@ class Cliente
     }  
     public function setCelular(int $celular)
     {
-        $this->celular = $celular;
+        $this->celular=$celular;
     }  
     
     public function getCelular()
@@ -106,10 +106,10 @@ class Cliente
     {
         try 
         {
-            $objConexion = new ConexionDB();
-            $conexion = $objConexion->abrir();
-            $query = "SELECT * FROM clientes";
-            $resultado = $conexion->query($query);
+            $objConexion=new ConexionDB();
+            $conexion=$objConexion->abrir();
+            $query="SELECT * FROM clientes";
+            $resultado=$conexion->query($query);
             $objConexion->cerrar();
         }
         catch (\PDOException $e)

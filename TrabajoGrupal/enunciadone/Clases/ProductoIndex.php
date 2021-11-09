@@ -1,7 +1,7 @@
 <?php
 namespace Clases;
-use config\ConexionDB;
-include_once "config/autoload.php";
+use Config\ConexionDB;
+include_once "../Config/autoload.php";
 
 class ProductoIndex
 {
@@ -9,11 +9,11 @@ class ProductoIndex
     {
         try 
         {
-            $objConexion = new ConexionDB();
-            $conexion = $objConexion->abrir();
-//          $query = "SELECT id_producto , tipo, descripcion, precio_producto,img FROM tipoproducto AS tp JOIN productos as p
+            $objConexion=new ConexionDB();
+            $conexion=$objConexion->abrir();
+//          $query="SELECT id_producto , tipo, descripcion, precio_producto,img FROM tipoproducto AS tp JOIN productos as p
 //          ON tp.id_Tproducto=p.id_tipo_productos LIMIT 12";
-            $query = "	SELECT id_producto,tipo,descripcion,precio_producto,img,descuento,estado,
+            $query="	SELECT id_producto,tipo,descripcion,precio_producto,img,descuento,estado,
             ROUND(precio_producto-(precio_producto*(descuento/100))) from productos as pro
             join tipoproducto as tp on pro.id_tipo_productos=tp.id_Tproducto
             where pro.estado='new';

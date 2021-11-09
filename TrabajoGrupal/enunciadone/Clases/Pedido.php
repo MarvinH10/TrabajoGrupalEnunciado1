@@ -1,7 +1,7 @@
 <?php
 namespace Clases;
-use config\ConexionDB; 
-include_once "../config/autoload.php";
+use Config\ConexionDB;
+include_once "../Config/autoload.php";
 
 class Pedido
 {
@@ -61,10 +61,10 @@ class Pedido
     {
         try 
         {
-            $objConexion = new ConexionDB();
-            $conexion = $objConexion->abrir();
-            $sqldelete = "DELETE FROM pedido WHERE id_pedido = $this->id";
-            $eliminado = $conexion->exec($sqldelete);
+            $objConexion=new ConexionDB();
+            $conexion=$objConexion->abrir();
+            $sqldelete="DELETE FROM pedido WHERE id_pedido=$this->id";
+            $eliminado=$conexion->exec($sqldelete);
             $objConexion->cerrar();   
         } 
         catch (\PDOException $e) 
@@ -78,13 +78,13 @@ class Pedido
     {
         try 
         {
-            $objConexion = new ConexionDB();
-            $conexion = $objConexion->abrir();
-            $sqldelete = "DELETE FROM pedido WHERE id_pedido = $id";
-            $eliminado = $conexion->exec($sqldelete);
+            $objConexion=new ConexionDB();
+            $conexion=$objConexion->abrir();
+            $sqldelete="DELETE FROM pedido WHERE id_pedido = $id";
+            $eliminado=$conexion->exec($sqldelete);
             $objConexion->cerrar();   
         } 
-        catch (\PDOException $e) 
+        catch(\PDOException $e)
         {
             echo "Error: ".$e->getMessage();
             exit();

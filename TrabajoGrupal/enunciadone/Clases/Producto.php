@@ -1,7 +1,7 @@
 <?php
 namespace Clases;
-use config\ConexionDB; 
-include_once "../config/autoload.php";
+use Config\ConexionDB;
+include_once "../Config/autoload.php";
 
 class Producto{
 
@@ -57,8 +57,7 @@ class Producto{
             $conexion = $objConexion->abrir();
             $query = "	SELECT id_producto,tipo,descripcion,precio_producto,img,descuento,estado,
             precio_producto-(precio_producto*(descuento/100)) from productos as pro
-            join tipoproducto as tp on pro.id_tipo_productos=tp.id_Tproducto;
-        ";
+            join tipoproducto as tp on pro.id_tipo_productos=tp.id_Tproducto;";
             $resultado = $conexion->query($query);
             $objConexion->cerrar();
         }
@@ -138,7 +137,7 @@ class Producto{
             $eliminado = $conexion->exec($sqldelete);
             $objConexion->cerrar();   
         } 
-        catch (\PDOException $e) 
+        catch (\PDOException $e)
         {
             echo "Error: ".$e->getMessage();
             exit();
@@ -157,7 +156,7 @@ class Producto{
             $eliminado = $conexion->exec($sqldelete);
             $objConexion->cerrar();   
         } 
-        catch (\PDOException $e) 
+        catch (\PDOException $e)
         {
             echo "Error: ".$e->getMessage();
             exit();
