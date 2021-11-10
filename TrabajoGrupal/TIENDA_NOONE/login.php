@@ -1,5 +1,6 @@
 <?php
 session_start();
+use config\ConexionDB;
 ?>
 <!DOCTYPE html>
 <html lang="en">
