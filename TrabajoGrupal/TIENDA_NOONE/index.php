@@ -22,7 +22,6 @@
     <?php include_once 'php/header.php'; ?>
 
     <div class="container">
-
         <div class="row">
             <div class="box">
                 <div class="col-lg-12 text-center">
@@ -60,18 +59,18 @@
         </div>
 
         <div class="nav categoria">
-            <h2>Productos Nuevos</h2>
+            <h2 style="color: white">Productos Nuevos</h2>
             <ul class="nav navbar-nav">
-                <li><a href="Vistas/categorias/arroz.php">Arroz</a></li>
-                <li><a href="Vistas/categorias/aceite.php">aceite</a></li>
-                <li><a href="Vistas/categorias/azucar.php">azucar y endulzante</a></li>
-                <li><a href="Vistas/categorias/fideos.php">fideos y pastas</a></li>
-                <li><a href="Vistas/categorias/conservas.php">conservas</a></li>
-                <li><a href="Vistas/categorias/menestras.php">menestras</a></li>
-                <li><a href="Vistas/categorias/galletas.php">galletas y golosinas</a></li>
-                <li><a href="Vistas/categorias/chocolateria.php">chocolateria</a></li>
-                <li><a href="Vistas/categorias/snacks.php">snacks y piqueos</a></li>
-                <li><a href="Vistas/categorias/salsas.php">salsas y condimentos</a></li>
+                <li><a style="color: black" href="categorias/arroz.php">Arroz</a></li>
+                <li><a style="color: black" href="categorias/aceite.php">aceite</a></li>
+                <li><a style="color: black" href="categorias/azucar.php">azucar y endulzante</a></li>
+                <li><a style="color: black" href="categorias/fideos.php">fideos y pastas</a></li>
+                <li><a style="color: black" href="categorias/conservas.php">conservas</a></li>
+                <li><a style="color: black" href="categorias/menestras.php">menestras</a></li>
+                <li><a style="color: black" href="categorias/galletas.php">galletas y golosinas</a></li>
+                <li><a style="color: black" href="categorias/chocolateria.php">chocolateria</a></li>
+                <li><a style="color: black" href="categorias/snacks.php">snacks y piqueos</a></li>
+                <li><a style="color: black" href="categorias/salsas.php">salsas y condimentos</a></li>
             </ul>
         </div>
 
@@ -88,7 +87,7 @@
             {
                 if (confirm("Solo los administradores tienen permitido acceder a esta página")==true)
                 {
-                    window.open("Vistas/login.php?rol=admin", "_self", null, true);
+                    window.open("login.php", "_self", null, true);
                 }
             }
 
@@ -96,7 +95,7 @@
             {
                 if (confirm("Estas seguro que deseas agregar este producto al carrito")==true)
                 {
-                    window.open("Vistas/carrito.php?ProductID=" + ProductID + "&Precio=" + Precio, "_self", null, true);
+                    window.open("carrito.php" + ProductID + "&Precio=" + Precio, "_self", null, true);
                 }
             }
         </script>

@@ -29,7 +29,7 @@ session_start();
                 <hr>
                 <div class="table-responsive">
                     <table border="5px" class="table">
-                        <tr style="text-align: center; color: Black; font-weight: bold;">
+                        <tr style="text-align: center; color: black; font-weight: bold;">
                             <td>ID de Pedido</td>
                             <td>ID de Cliente</td>
                             <td>Tipo producto</td>

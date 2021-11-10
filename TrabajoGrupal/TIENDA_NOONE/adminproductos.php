@@ -38,11 +38,11 @@ session_start();
                         </tr>
 
                         <tr style="color: black">
-                            <td><img style="width: 100px; height: 100px;" src="img/"></td>
-                            <td>0</td>
+                            <td><img style="width: 100px; height: 100px;" src="img/slide-1.jpg"></td>
                             <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
+                            <td>Arroz</td>
+                            <td>El Kilo de Arroz</td>
+                            <td>$15.00</td>
                             <td>
                                 <a href="#" style="margin-bottom: 5px;" class="btn btn-primary">Editar</a>
                                 <a href="#" style="margin-bottom: 5px;" class="btn btn-danger">Eliminar</a>

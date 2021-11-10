@@ -1,5 +1,6 @@
 <?php
 session_start();
+use config\ConexionDB;
 
 if(!empty($_GET['ActionType']))
 {
@@ -85,5 +86,14 @@ if(!empty($_GET['ActionType']))
 </div>
 
 <?php include_once 'php/footer.php'; ?>
+<script>
+    function ManagementOnclick()
+    {
+        if(confirm("Solo los administradores tienen permitido acceder a esta página.")==true)
+        {
+            window.open("login.php?rol=admin","_self",null,true);
+        }
+    }
+</script>
 </body>
 </html>

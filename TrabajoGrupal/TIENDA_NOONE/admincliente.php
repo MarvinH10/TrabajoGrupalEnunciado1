@@ -11,8 +11,8 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Administrador</title>
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../public/css/bussines-casual.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bussines-casual.css" rel="stylesheet">
 </head>
 
 <body>
@@ -39,13 +39,26 @@ session_start();
                         </tr>
 
                         <tr style="color: black">
+                            <td>1</td>
+                            <td>usuario</td>
+                            <td>Jerico</td>
+                            <td>Cajahuaman</td>
+                            <td>74341526</td>
+                            <td>jr. ayacucho 153</td>
+                            <td>912456863</td>
+                            <td>
+                                <a href="#" style="margin-bottom: 5px;" class="btn btn-primary">Editar</a>
+                                <a href="#" style="margin-bottom: 5px;" class="btn btn-danger">Eliminar</a>
+                            </td>
+                            <br>
+                        <tr style="color: black">
                             <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td>8</td>
+                            <td>admin</td>
+                            <td>Marvin</td>
+                            <td>Campos</td>
+                            <td>75179992</td>
+                            <td>jr. 28 de julio 1614</td>
+                            <td>966741287</td>
                             <td>
                                 <a href="#" style="margin-bottom: 5px;" class="btn btn-primary">Editar</a>
                                 <a href="#" style="margin-bottom: 5px;" class="btn btn-danger">Eliminar</a>
