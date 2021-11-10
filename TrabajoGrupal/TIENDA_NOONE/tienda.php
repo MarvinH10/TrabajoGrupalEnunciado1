@@ -13,8 +13,8 @@ session_start();
     <meta name="author" content="">
 
     <title>TIENDA NOONE</title>
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../public/css/bussines-casual.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bussines-casual.css" rel="stylesheet">
 </head>
 
 <body>

@@ -1,5 +1,5 @@
-    <div class="brand">REGISTRO NOONE</div>
-    <div class="address-bar"><strong>Productos a primera marca </strong>justo en tus manos</div>
+    <div class="brand">TIENDA NOONE</div>
+    <div class="address-bar"><strong>Productos a primera marca </strong>en la palma de  tus manos</div>
 
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
